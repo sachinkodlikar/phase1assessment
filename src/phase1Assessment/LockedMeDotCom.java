@@ -54,44 +54,43 @@ public class LockedMeDotCom {
     System.out.println("*                                                   *");
     System.out.println("=====================================================" + '\n');
     try {
-    Scanner sc = new Scanner(System.in);
-    int value = sc.nextInt();
-    switch (value) {
-    case 1:
-      createNewFile();
-      break;
-    case 2:
-      deleteFile();
-      break;
-    case 3:
-      searchFile();
-      break;
-    default:
-      System.out.println("Your Selection is Invalid! You need to Select 1 or 2 or 3 to Proceed Further.");
-      selectAction();
-      break;
-    }
-    sc.close();
-    }
-    catch (Exception e) {
-    	return;
+      Scanner sc = new Scanner(System.in);
+      int value = sc.nextInt();
+      switch (value) {
+      case 1:
+        createNewFile();
+        break;
+      case 2:
+        deleteFile();
+        break;
+      case 3:
+        searchFile();
+        break;
+      default:
+        System.out.println("Your Selection is Invalid! You need to Select 1 or 2 or 3 to Proceed Further.");
+        selectAction();
+        break;
+      }
+      sc.close();
+    } catch (Exception e) {
+      return;
     }
   }
 
   public static void displayExistingFiles() {
-	    Set <String> fname = new TreeSet <String> ();
-	    fname.add(filename04);
-	    fname.add(filename01);
-	    fname.add(filename02);
-	    fname.add(filename03);
-	    System.out.println('\n' +"Below are the Files in the Directory Path Arranged in an Ascending Order:" + '\n');
-	    File file = new File(path);
-	    String[] fileList = file.list();
-	    Arrays.sort(fileList);
-	    for(int i=0; i<fileList.length; i++) {
-	    	System.out.println(fileList[i]);
-	    }
-}
+    Set < String > fname = new TreeSet < String > ();
+    fname.add(filename04);
+    fname.add(filename01);
+    fname.add(filename02);
+    fname.add(filename03);
+    System.out.println('\n' + "Below are the Files in the Directory Path Arranged in an Ascending Order:" + '\n');
+    File file = new File(path);
+    String[] fileList = file.list();
+    Arrays.sort(fileList);
+    for (int i = 0; i < fileList.length; i++) {
+      System.out.println(fileList[i]);
+    }
+  }
 
   public static void createFiles(String filename) {
     try {
@@ -117,29 +116,29 @@ public class LockedMeDotCom {
     System.out.println("*                                           *");
     System.out.println("=============================================" + '\n');
     try {
-  	  Scanner sc = new Scanner(System.in);
+      Scanner sc = new Scanner(System.in);
       FileName fn = new FileName();
       String value = sc.next();
       fn.setFilename(value);
-      File file = new File(path+value);
-     	if(file.createNewFile()) {
-			System.out.println("File is created!");
-		} else {
-			System.out.println("File Already Exists!");
-		}
-     	Thread.sleep(2000);
-     	displayExistingFiles();
-		selectAction();
-     	sc.close();
-     	
-		// Write Content
-		FileWriter writer = new FileWriter(file);
-		writer.write("Test Data to file "+value);
-		writer.close();	
-	} catch (IOException | InterruptedException e) {
-		System.out.println("File Creation Failed !");
-	}
-  	}
+      File file = new File(path + value);
+      if (file.createNewFile()) {
+        System.out.println("File is created!");
+      } else {
+        System.out.println("File Already Exists!");
+      }
+      Thread.sleep(2000);
+      displayExistingFiles();
+      selectAction();
+      sc.close();
+
+      // Write Content
+      FileWriter writer = new FileWriter(file);
+      writer.write("Test Data to file " + value);
+      writer.close();
+    } catch (IOException | InterruptedException e) {
+      System.out.println("File Creation Failed !");
+    }
+  }
 
   public static void deleteFile() {
     System.out.println("=============================================");
@@ -157,7 +156,7 @@ public class LockedMeDotCom {
       System.out.println(value + " is Deleted!");
       Thread.sleep(2000);
       displayExistingFiles();
-	  selectAction();
+      selectAction();
       sc.close();
     } catch (Exception e) {
       System.out.println("File Not Found!");
@@ -181,10 +180,10 @@ public class LockedMeDotCom {
       } else {
         System.out.println(value + " is not Available!");
       }
-   	Thread.sleep(2000);
-   	displayExistingFiles();
-    selectAction();
-    sc.close();
+      Thread.sleep(2000);
+      displayExistingFiles();
+      selectAction();
+      sc.close();
     } catch (Exception e) {
       System.out.println("Error in File Handling");
     }
