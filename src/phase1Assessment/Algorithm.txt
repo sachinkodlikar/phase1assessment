@@ -1,0 +1,60 @@
+Algorithm for the LockedMeDotCom:
+Step 01: Create a Public Main Java Class "LockedMeDotCom".
+
+Step 02: Create a Class "FileName" with Constructor having the Getter & Setter Methods to Read the File Name.
+
+Step 03: Declare the static variables for File Handling.
+
+Step 04: Declare a static variable for Scanner to read the User Input.
+
+Step 05: Write a "welcomeScreen" Method to Show the User about the Application.
+
+Step 06: Write a "selectAction" Method to Show the User about the Options he can select to Perform the Application Functionalities.
+
+Step 07: Inside "selectAction" Method, use Switch Statement to implement to take the User Inputs in Numbers (i.e. 1, 2 & 3).
+
+Step 08: Under each Input that the User Enters, implement the Functionalities below:
+		 1. Number 1 to Add a File in a Directory with the File Name provided by User.
+		 2. Number 2 to Delete a File in a Directory with the File Name provided by User.
+		 3. Number 3 to Search a File in a Directory with the File Name provided by User.
+		 4. If a User Inputs any Number other than 1, 2 or 3, then a Default Message should be displayed.
+		 5. If a User Inputs any other String other than Numbers, then Terminate the Application.
+
+Step 09: Write a "createFiles" Method, to create Files in the Directory.
+		 1. If a same file is being created, then the content of the file should be erased.
+		 2. Create a file using FileOutputStream class by mentioning the Path & the File Name that the User provided in the Java Main method.
+		 3. Add a Text into the Created file.
+
+Step 10: Write a "displayExistingFiles" Method, to display the Files in an Ascending Order that already exists in a Directory.
+		 1. The Files need to be added into the TreeSet which organises the files in an ascending order.
+		 2. To display the Files vertically, convert the Files in the Directory into a String Array & then sort all the Files in an ascending order.
+		 3. Using "for" loop, display the Files in the Directory vertically in an Ascending Order.
+		 
+Step 11: Write a "createNewFile" Method, which creates a File in Directory with User Mentioned File Name as mentioned in Step 08(1).
+		 1. Using the Setter Method, Set the File Name provided by User.
+		 2. If the File Name is unique, create a New File in the Directory with using a Java "File" method.
+		 3. If the File Name is duplicate, show a Message "File Already Exists!".
+		 4. Post creating a new file, show the File in the Directory with already Existing Files arranged in an Ascending Order by Calling "displayExistingFiles" method.
+		 5. Show the Options to User if he wants to continue performing any actions by Calling "selectAction" method.
+
+Step 12: Write a "deleteFile" Method, which deletes a File in Directory with User Mentioned File Name as mentioned in Step 08(2).
+		 1. Using a Scanner Class , the Input File Name entered by User is taken & stored in "value" variable.
+		 2. Using the Setter Method, Set the File Name provided by User.
+		 3. If the File with the provided File Name is present in the Directory, then the file is Deleted using a Java "delete" method.
+		 4. If the File with the provided File Name is not present in the Directory, then an exception is handled with a Message "File Not Found!".
+		 5. Post deleting the file, show the File in the Directory with already Existing Files arranged in an Ascending Order by Calling "displayExistingFiles" method.
+		 6. Show the Options to User if he wants to continue performing any actions by Calling "selectAction" method.
+
+Step 13: Write a "searchFile" Method, which searches a File in Directory with User Mentioned File Name as mentioned in Step 08(3).
+		 1. Using a Scanner Class , the Input File Name entered by User is taken & stored in "value" variable.
+		 2. Using the Setter Method, Set the File Name provided by User.
+		 3. If the File with the provided File Name is exists in the Directory, then the file name is returned using a Java "exists" method.
+		 4. If the File with the Provided File Name is not present in the Directory, then show a Message "File Name is not Available!".
+		 5. Post searching the file, show the File in the Directory with already Existing Files arranged in an Ascending Order by Calling "displayExistingFiles" method.
+		 6. Show the Options to User if he wants to continue performing any actions by Calling "selectAction" method.
+
+Step 14: Write a Main Method for the Class "LockedMeDotCom".
+		 1. Display the Details of Application by Calling "welcomeScreen" Method.
+		 2. Create a few files in the Directory by Calling "createFiles" Method.
+		 3. Display the Existing Files in the Directory arranged in an Ascending Order by Calling "displayExistingFiles" Method.
+		 4. Call a "selectAction" Method to allow User to Perform Actions on the Application.

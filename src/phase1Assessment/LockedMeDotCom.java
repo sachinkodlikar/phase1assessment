@@ -140,27 +140,26 @@ public class LockedMeDotCom {
     }
   }
 
-  public static void deleteFile() {
+  public static void deleteFile() throws InterruptedException {
     System.out.println("=============================================");
     System.out.println("*                                           *");
     System.out.println("*     Enter the File Name to be Deleted     *");
     System.out.println("*                                           *");
     System.out.println("=============================================" + '\n');
-    String path = "/home/sachinkodlikar1/eclipse-workspace/Assessment_Phase_1/src/";
+    Scanner sc = new Scanner(System.in);
     try {
-      Scanner sc = new Scanner(System.in);
       String value = sc.next();
       FileName fn = new FileName();
       fn.setFilename(value);
       Files.delete(Paths.get(path + value));
       System.out.println(value + " is Deleted!");
-      Thread.sleep(2000);
-      displayExistingFiles();
-      selectAction();
-      sc.close();
     } catch (Exception e) {
       System.out.println("File Not Found!");
     }
+    Thread.sleep(2000);
+    displayExistingFiles();
+    selectAction();
+    sc.close();
   }
 
   private static void searchFile() {
@@ -169,7 +168,6 @@ public class LockedMeDotCom {
     System.out.println("*     Enter the File Name to be Searched    *");
     System.out.println("*                                           *");
     System.out.println("=============================================" + '\n');
-    String path = "/home/sachinkodlikar1/eclipse-workspace/Assessment_Phase_1/src/";
     try {
       Scanner sc = new Scanner(System.in);
       String value = sc.next();

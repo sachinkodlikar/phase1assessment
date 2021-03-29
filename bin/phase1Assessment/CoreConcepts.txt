@@ -1,0 +1,15 @@
+Core Concepts Uses in this Project are:
+==> File Handling.
+==> User Input Handling.
+==> OOPS Concepts like Method Overloading, Method Overriding.
+==> Constructors Usage.
+==> Type Casting.
+==> Access Modifiers.
+==> Conditional Statements like "if-else" & "switch".
+==> Exception Handling.
+==> Collections using TreeSet.
+==> Array Sorting.
+==> Thread.
+==> Staging the File in Git.
+==> Committing the File in Git.
+==> Pushing the Files from Local Repository to Github.
